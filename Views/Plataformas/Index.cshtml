@@ -1,0 +1,16 @@
+﻿@model List<ProjetoJogos.Models.Plataforma>
+
+<h1>Plataformas</h1>
+
+<a asp-action="Create">
+    Nova Plataforma
+</a>
+
+<hr />
+
+@foreach (var plataforma in Model)
+{
+    <p>
+        @plataforma.Nome
+    </p>
+}

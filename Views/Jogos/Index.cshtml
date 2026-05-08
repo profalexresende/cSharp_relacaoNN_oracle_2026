@@ -1,0 +1,37 @@
+﻿@model List<ProjetoJogos.Models.Jogo>
+
+<h1>Jogos</h1>
+
+<a asp-action="Create">
+    Novo Jogo
+</a>
+
+<hr />
+
+@foreach (var jogo in Model)
+{
+    <div>
+
+        <h3>@jogo.Nome</h3>
+
+        <p>
+            Ano: @jogo.AnoLancamento
+        </p>
+
+        <p>
+            Plataformas:
+        </p>
+
+        <ul>
+            @foreach (var item in jogo.JogosPlataformas)
+            {
+                <li>
+                    @item.Plataforma.Nome
+                </li>
+            }
+        </ul>
+
+    </div>
+
+    <hr />
+}
